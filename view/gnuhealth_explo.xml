@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<form>
+    <notebook>
+        <page string="Main Info" id="explo_main_info">
+            <label name="name"/>
+            <field name="name"/>
+            <label name="test"/>
+            <field name="test"/>
+            <label name="date_analysis"/>
+            <field name="date_analysis"/>
+            <newline/>
+            <label name="patient"/>
+            <field name="patient"/>
+            <label name="realisateur"/>
+            <field name="realisateur"/>
+            <newline/>
+            <label name="date_requested"/>
+            <field name="date_requested"/>
+            <label name="requestor"/>
+            <field name="requestor"/>
+            <label name="request_order"/>
+            <field name="request_order"/>
+            <label name="indication"/>
+            <field name="indication"/>
+	    <label name="technique"/>
+	    <field name="technique"/>
+            <newline/>
+            <field name="critearea" colspan="4" view_ids="health_explo.test_critearea_view_tree_explo,health_explo.test_critearea_view_form_explo"/>
+        </page>
+        <page string="Extra Info" id="explo_extra_info">
+            <group id="explo_result_extra_info" colspan="4">
+                <separator colspan="4" string="Mots clés" id="separator_notes"/>
+                <field name="results"/>
+                <newline/>
+                <separator colspan="4" string="Conclusion" id="separator_diagnosis"/>
+                <field name="diagnosis"/>
+        </group>
+        </page>
+
+        <page string="Résultat" id="resultat">
+            <group id="explo_result" colspan="4">
+                <separator colspan="4" string="Résultat" id="separator_macro"/>
+                <field name="resultat"/>
+                <newline/>
+                <separator colspan="4" string="Traitement_Proposé" id="separator_macro"/>
+                <field name="traitement"/>
+                <newline/>
+                <separator colspan="4" string="Commentaire" id="separator_micro"/>
+                <field name="commentaire"/>
+        </group>
+        </page>
+    </notebook>
+</form>

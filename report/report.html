@@ -1,0 +1,85 @@
+<html xmlns:py="http://genshi.edgewall.org/">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Stripe Checkout</title>
+        <script src="https://js.stripe.com/v3/">
+        </script>
+    </head>
+ <body>
+
+
+<div><p></p></div>
+        <py:for each="record in records[:1]">
+            <div>
+                <div style="text-align: center;"><p><u><b>COMPTE RENDU ${record.requested_test.name}</b></u></p></div>
+                <div><p><b>Nom: </b>${record.patient.name.name} ${record.patient.name.lastname}</p></div>
+                <div><p><b>Age: </b>${record.patient.name.age}</p></div>
+            </div>
+            <div><p><b>Date: </b>${record.patient.name.age}</p></div>
+           <div><p><b>Médecin demandeur: </b>${record.request.doctor.name.name} ${record.request.doctor.name.lastname}</p></div>
+        </py:for>
+
+   <div></div>
+<div align="left">
+ <u>
+  <i>
+   <b>
+    TECHNIQUE
+   </b>
+  </i>
+ </u>
+ <b>
+  :
+ </b>
+ irm dfsdkfhdjkfd
+ <b>
+  <br/>
+ </b>
+</div>
+<div>
+ <u>
+  <b>
+   RÉSULTAT :
+  </b>
+ </u>
+</div>
+<div>
+ <b>
+  <br/>
+ </b>
+</div>
+<div>
+ le reesulbfdsjh ndbfjdkb ,jhxnikjodi
+</div>
+<div>
+ dfkuhdihkjdgvnklfjgnkfl
+</div>
+<div>
+ djkfldfnjishdiunv jsdifjedfhils jdkfhidsfylh
+</div>
+<div>
+ <u>
+  <b>
+   <br/>
+  </b>
+ </u>
+</div>
+<div>
+ <u>
+  <b>
+   <br/>
+  </b>
+ </u>
+</div>
+<div align="left">
+ <b>
+  <u>
+   CONCLUSION
+  </u>
+  :
+ </b>
+</div>
+<b>
+ *IRM Cerebrale normale
+</b></body></html>
