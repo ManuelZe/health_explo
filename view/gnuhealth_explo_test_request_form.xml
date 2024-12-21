@@ -7,8 +7,8 @@
     <field name="name"/>
     <label name="date"/>
     <field name="date"/>
-    <label name="patient_id"/>
-    <field name="patient_id"/>
+    <label name="source_name"/>
+    <field name="source_name"/>
     <label name="doctor_id"/>
     <field name="doctor_id"/>
     <label name="context"/>
