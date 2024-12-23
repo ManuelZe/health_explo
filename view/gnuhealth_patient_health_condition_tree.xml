@@ -9,6 +9,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <data>
     <xpath expr="/tree/field[@name=&quot;disease_severity&quot;]" position="after">
-        <field name="explo_confirmed" expand="1"/>
+        <field name="exp_confirmed" expand="1"/>
     </xpath>
 </data>
