@@ -15,13 +15,13 @@ from trytond.tools.multivalue import migrate_property
 exp_request_sequence = fields.Many2One(
     'ir.sequence', 'Exp request sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health_exp', 'seq_type_gnuhealth_exp_request'))])
+        'health_explo', 'seq_type_gnuhealth_exp_request'))])
 
 
 exp_test_sequence = fields.Many2One(
     'ir.sequence', 'Exp test sequence', required=True,
     domain=[('sequence_type', '=', Id(
-        'health_exp', 'seq_type_gnuhealth_exp_test'))])
+        'health_explo', 'seq_type_gnuhealth_exp_test'))])
 
 
 # GNU HEALTH SEQUENCES
@@ -40,7 +40,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
         pool = Pool()
         ModelData = pool.get('ir.model.data')
         try:
-            return ModelData.get_id('health_exp',
+            return ModelData.get_id('health_explo',
                                     'seq_gnuhealth_exp_request')
         except KeyError:
             return None
@@ -50,7 +50,7 @@ class GnuHealthSequences(metaclass=PoolMeta):
         pool = Pool()
         ModelData = pool.get('ir.model.data')
         try:
-            return ModelData.get_id('health_exp',
+            return ModelData.get_id('health_explo',
                                     'seq_gnuhealth_exp_test')
         except KeyError:
             return None
