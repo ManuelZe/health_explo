@@ -2,10 +2,10 @@
 <data>
     <xpath expr="/form/group[@id=&quot;group_related_evaluations&quot;]" position="before">
         <group string="exploration" colspan="4" id="group_explo_info">
-            <label name="explo_confirmed"/>
-            <field name="explo_confirmed"/>
-            <label name="explo_test"/>
-            <field name="explo_test"/>
+            <label name="exp_confirmed"/>
+            <field name="exp_confirmed"/>
+            <label name="exp_test"/>
+            <field name="exp_test"/>
         </group>
     </xpath>
 </data>
