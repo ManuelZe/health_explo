@@ -3,7 +3,7 @@
     <data>
         <record model="gnuhealth.command" id="explo">
             <field name="name">explo</field>
-            <field name="model">gnuhealth.explo</field>
+            <field name="model">gnuhealth.exp</field>
             <field name="label">explo Tests</field>
             <field name="description">explo Test Results</field>
             <field name="internal">False</field>
