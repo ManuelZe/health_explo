@@ -7,8 +7,8 @@
                 <field name="name"/>
                 <label name="code"/>
                 <field name="code"/>
-                <!-- <label name="test_type"/>
-                <field name="test_type"/> -->
+                <label name="test_type"/>
+                <field name="test_type"/>
                 <label name="active"/> 
                 <field name="active"/>
             </group>
