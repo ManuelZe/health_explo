@@ -208,15 +208,19 @@ class Exp(ModelSQL, ModelView):
     @staticmethod
     def default_source_type():
         return 'patient'
-
+        
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
+        pool = Pool()
+        ExpTest = pool.get("gnuhealth.patient.exp.test")
+        records = ExpTest.search([], order=[('id', 'DESC')], limit=1)
+        result = records[0].request if records else None
         config = Config(1)
         sequence = config.get_multivalue(
-            'exp_test_sequence', **pattern)
-        if sequence:
-            return sequence.get()
+            'exp_request_sequence', **pattern)
+        if result:
+            return "TEST000" + str(result)
 
     @classmethod
     def create(cls, vlist):
