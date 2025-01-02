@@ -447,17 +447,22 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
+        pool = Pool()
+        ExpTest = pool.get("gnuhealth.patient.exp.test")
+        records = ExpTest.search([], order=[('id', 'DESC')], limit=1)
+        request = records[0].id + 1 if records else None
         config = Config(1)
         sequence = config.get_multivalue(
             'exp_request_sequence', **pattern)
-        if sequence:
-            return sequence.get()
+        if request:
+            return request
 
     @classmethod
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
             print("------------------- ", values)
+            values["request"] = cls.generate_code()
             if not values.get('name'):
                 values['name'] = cls.generate_code()
 
