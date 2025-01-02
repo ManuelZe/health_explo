@@ -18,6 +18,7 @@ from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Not, Bool
 from trytond.modules.health.core import get_health_professional
+from trytond.transaction import Transaction
 
 __all__ = [
     'PatientData', 'TestType', 'Exp',
@@ -448,6 +449,36 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     def default_doctor_id():
         return get_health_professional()
 
+    
+    @classmethod
+    def contact(self, id):
+
+        print("Les différentes données ", id)
+        transaction = Transaction()
+        cursor = transaction.connection.cursor()
+        #cursor = conn2.cursor()
+        f = cursor.execute("SELECT current_database()")
+        database_name = cursor.fetchone()[0]
+        #sql = "SELECT type, value FROM party_contact_mechanism JOIN party_party ON party_contact_mechanism.party = party_party.id JOIN gnuhealth_patient ON {} = gnuhealth_patient.id".format(id)
+        sql1 = "SELECT name FROM gnuhealth_patient where gnuhealth_patient.id = {}".format(id)
+        cursor.execute(sql1)
+        data1 = cursor.fetchone()
+        print("Les différentes données ", data1[0])
+        sql2 = "SELECT type, value FROM party_contact_mechanism WHERE party = {}".format(data1[0])
+        cursor.execute(sql2)
+        data2 = cursor.fetchall()
+        #print("Les différentes données ", data2[0][0])
+
+        list_phone = []
+        for item in data2 :
+            if item[0] == "phone" :
+                list_phone.append(item[1])
+
+        print("Les différentes données ", list_phone)
+
+        return ("/ ".join(list_phone))
+    
+    
     @classmethod
     def generate_code(cls, **pattern):
         Config = Pool().get('gnuhealth.sequences')
