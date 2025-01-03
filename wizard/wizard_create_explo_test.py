@@ -13,7 +13,7 @@ from trytond.i18n import gettext
 from ..exceptions import ExploOrderExists
 
 __all__ = [
-    'CreateExploTestOrderInit', 'CreateExploTestOrder', 'RequestEXPTest',
+    'CreateExploTestOrderInit', 'CreateExploTestOrder', 'RequestTest',
     'RequestPatientExploTestStart', 'RequestPatientExploTest']
 
 
@@ -85,9 +85,9 @@ class CreateExploTestOrder(Wizard):
         return 'end'
 
 
-class RequestEXPTest(ModelView):
+class RequestTest(ModelView):
     'Request - Test'
-    __name__ = 'gnuhealth.request_test'
+    __name__ = 'gnuhealth.request-test'
     _table = 'gnuhealth_request_test'
 
     request = fields.Many2One(
@@ -120,7 +120,7 @@ class RequestPatientExploTestStart(ModelView):
     doctor = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof',
         help="Health professional who ordered the explo tests.")
-    tests = fields.Many2Many('gnuhealth.request_test', 'request', 'test', 'Tests', required=True)
+    tests = fields.Many2Many('gnuhealth.request-test', 'request', 'test', 'Tests', required=True)
     urgent = fields.Boolean('Urgent')
 
     @staticmethod
