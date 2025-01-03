@@ -57,7 +57,7 @@ class TestType(ModelSQL, ModelView):
         'gnuhealth.exp.test.critearea', 'test_type_id',
         'Test Cases')
     test_type = fields.Many2One(
-        'gnuhealth.exp.type', 'Paillasse')
+        'gnuhealth.exp.type', 'Service')
 
     active = fields.Boolean('Active', select=True)
 
