@@ -30,7 +30,7 @@ def register():
         health_explo.GnuHealthPatientExpTest,
         wizard.CreateExploTestOrderInit,
         wizard.RequestPatientExploTestStart,
-        wizard.RequestTest,
+        wizard.RequestEXPTest,
         health_explo.PatientHealthCondition,
         sequences.GnuHealthSequences,
         sequences.ExpRequestSequence,

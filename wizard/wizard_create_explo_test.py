@@ -13,7 +13,7 @@ from trytond.i18n import gettext
 from ..exceptions import ExploOrderExists
 
 __all__ = [
-    'CreateExploTestOrderInit', 'CreateExploTestOrder', 'RequestTest',
+    'CreateExploTestOrderInit', 'CreateExploTestOrder', 'RequestEXPTest',
     'RequestPatientExploTestStart', 'RequestPatientExploTest']
 
 
