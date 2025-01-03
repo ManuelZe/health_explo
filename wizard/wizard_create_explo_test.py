@@ -85,7 +85,7 @@ class CreateExploTestOrder(Wizard):
         return 'end'
 
 
-class RequestTest(ModelView):
+class RequestEXPTest(ModelView):
     'Request - Test'
     __name__ = 'gnuhealth.request_test'
     _table = 'gnuhealth_request_test'
