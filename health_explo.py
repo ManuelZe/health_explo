@@ -221,7 +221,7 @@ class Exp(ModelSQL, ModelView):
         sequence = config.get_multivalue(
             'exp_request_sequence', **pattern)
         if code_result:
-            if len(str(code_result) < 3) :
+            if len(str(code_result)) < 3 :
                 return "TEST0" + str(code_result)
             else :
                 return "TEST" + str(code_result)
