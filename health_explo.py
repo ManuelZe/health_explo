@@ -217,11 +217,12 @@ class Exp(ModelSQL, ModelView):
         ExpTest = pool.get("gnuhealth.patient.exp.test")
         records = ExpTest.search([], order=[('id', 'DESC')], limit=1)
         result = records[0].request if records else None
+        pk = records[0].id if records else None
         config = Config(1)
         sequence = config.get_multivalue(
             'exp_request_sequence', **pattern)
         if result:
-            return "TEST000" + str(result)
+            return "TEST000" + str(result) + str(pk)
 
     @classmethod
     def create(cls, vlist):
