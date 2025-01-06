@@ -456,7 +456,6 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     @classmethod
     def contact(self, id):
 
-        print("Les différentes données ", id)
         transaction = Transaction()
         cursor = transaction.connection.cursor()
         #cursor = conn2.cursor()
@@ -466,7 +465,6 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
         sql1 = "SELECT name FROM gnuhealth_patient where gnuhealth_patient.id = {}".format(id)
         cursor.execute(sql1)
         data1 = cursor.fetchone()
-        print("Les différentes données ", data1[0])
         sql2 = "SELECT type, value FROM party_contact_mechanism WHERE party = {}".format(data1[0])
         cursor.execute(sql2)
         data2 = cursor.fetchall()
@@ -476,8 +474,6 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
         for item in data2 :
             if item[0] == "phone" :
                 list_phone.append(item[1])
-
-        print("Les différentes données ", list_phone)
 
         return ("/ ".join(list_phone))
     
