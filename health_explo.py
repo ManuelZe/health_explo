@@ -114,12 +114,16 @@ class Exp(ModelSQL, ModelView):
         states={'invisible': (Eval('source_type') != 'patient')},
         help="Patient ID", select=True)
     patient_name = fields.Function(
-        fields.Text('Name'), 'get_patient_name')
+        fields.Text('Name'), 'get_patient_id')
     
     @fields.depends('patient')
     def get_patient_name(self, name):
         if self.patient:
             return self.patient.puid
+
+    def get_patient_id(self, name):
+        if self.patient:
+            return self.patient.name.name+" "+self.patient.name.lastname
         
     other_source = fields.Char('Other', 
         states={'invisible': (Eval('source_type') != 'other_source')},
@@ -225,6 +229,8 @@ class Exp(ModelSQL, ModelView):
                 return "TEST0" + str(code_result)
             else :
                 return "TEST" + str(code_result)
+        else :
+            return "TEST01"
 
     @classmethod
     def create(cls, vlist):
@@ -490,6 +496,8 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
             'exp_request_sequence', **pattern)
         if request:
             return request
+        else :
+            return 1
 
     @classmethod
     def create(cls, vlist):
