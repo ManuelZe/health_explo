@@ -220,7 +220,7 @@ class Exp(ModelSQL, ModelView):
         pool = Pool()
         Result = pool.get("gnuhealth.exp")
         records = Result.search([], order=[('id', 'DESC')], limit=1)
-        code_result = records[0].id if records else None
+        code_result = records[0].id+1 if records else None
         config = Config(1)
         sequence = config.get_multivalue(
             'exp_request_sequence', **pattern)
