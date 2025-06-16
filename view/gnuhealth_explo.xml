@@ -14,6 +14,7 @@
               <field name="patient"/>
               <field name="other_source"/>
             </group>
+            <newline/>
             <label name="realisateur"/>
             <field name="realisateur"/>
             <newline/>
