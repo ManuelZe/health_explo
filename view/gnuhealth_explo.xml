@@ -9,8 +9,11 @@
             <label name="date_analysis"/>
             <field name="date_analysis"/>
             <newline/>
-            <label name="patient"/>
-            <field name="patient"/>
+            <group id="exp_sample_source" colspan="1">
+              <field name="source_type"/>
+              <field name="patient"/>
+              <field name="other_source"/>
+            </group>
             <label name="realisateur"/>
             <field name="realisateur"/>
             <newline/>
