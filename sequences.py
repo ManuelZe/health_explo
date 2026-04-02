@@ -9,7 +9,6 @@ from trytond.model import (ModelSQL, ValueMixin, fields)
 from trytond import backend
 from trytond.pyson import Id
 from trytond.pool import Pool, PoolMeta
-from trytond.tools.multivalue import migrate_property
 
 # Sequences
 exp_request_sequence = fields.Many2One(
@@ -65,17 +64,6 @@ class _ConfigurationValue(ModelSQL):
         exist = backend.TableHandler.table_exist(cls._table)
 
         super(_ConfigurationValue, cls).__register__(module_name)
-
-        if not exist:
-            cls._migrate_property([], [], [])
-
-    @classmethod
-    def _migrate_property(cls, field_names, value_names, fields):
-        field_names.append(cls._configuration_value_field)
-        value_names.append(cls._configuration_value_field)
-        migrate_property(
-            'gnuhealth.sequences', field_names, cls, value_names,
-            fields=fields)
 
 
 class ExpRequestSequence(_ConfigurationValue, ModelSQL, ValueMixin):
