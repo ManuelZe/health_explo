@@ -389,7 +389,7 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     'Exp Test Request'
     __name__ = 'gnuhealth.patient.exp.test'
 
-    name = fields.Many2One(
+    test_type = fields.Many2One(
         'gnuhealth.exp.test_type', 'Test Type',
         required=True )
     date = fields.DateTime('Date' )
