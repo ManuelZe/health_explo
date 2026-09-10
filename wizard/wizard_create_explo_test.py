@@ -87,8 +87,8 @@ class CreateExploTestOrder(Wizard):
 
 class RequestTest(ModelView):
     'Request - Test'
-    __name__ = 'gnuhealth.request-test'
-    _table = 'gnuhealth_request_test'
+    __name__ = 'gnuhealth.patient.exp.request-test'
+    _table = 'gnuhealth_patient_exp_request_test'
 
     request = fields.Many2One(
         'gnuhealth.patient.exp.test.request.start',
@@ -120,7 +120,9 @@ class RequestPatientExploTestStart(ModelView):
     doctor = fields.Many2One(
         'gnuhealth.healthprofessional', 'Health prof',
         help="Health professional who ordered the explo tests.")
-    tests = fields.Many2Many('gnuhealth.request-test', 'request', 'test', 'Tests', required=True)
+    tests = fields.Many2Many(
+    'gnuhealth.patient.exp.request-test', 'request', 'test', 'Tests',
+    required=True)
     urgent = fields.Boolean('Urgent')
 
     @staticmethod
