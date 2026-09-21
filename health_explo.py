@@ -498,11 +498,8 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            if not values.get('request'): # Mieux vaut vérifier avant d'écraser
-                values["request"] = cls.generate_code()
-            # values["request"] = cls.generate_code()
-            # if not values.get('name'):
-            #     values['name'] = cls.generate_code()
+            if not values.get('request'):
+                values['request'] = cls.generate_code()
 
         return super(GnuHealthPatientExpTest, cls).create(vlist)
 
