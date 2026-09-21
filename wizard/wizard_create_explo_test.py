@@ -170,7 +170,7 @@ class RequestPatientExploTest(Wizard):
         for test in self.start.tests:
             explo_test = {}
             explo_test['request'] = request_number
-            explo_test['test_type2'] = test.id
+            explo_test['rec_name'] = test.id
             explo_test['source_type'] = self.start.source_type
             explo_test['patient_id'] = self.start.patient and self.start.patient.id
             explo_test['other_source'] = self.start.other_source
