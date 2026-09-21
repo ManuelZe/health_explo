@@ -391,7 +391,7 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
 
     test_type2 = fields.Many2One(
         'gnuhealth.exp.test_type', 'Test Type',
-        required=True )
+         )
     date = fields.DateTime('Date' )
     state = fields.Selection([
         ('draft', 'Draft'),
