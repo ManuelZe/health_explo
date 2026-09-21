@@ -3,8 +3,8 @@
     <label name="request"/>
     <field name="request"/>
     <newline/>
-    <label name="name"/>
-    <field name="name"/>
+    <label name="test_type2"/>
+    <field name="test_type2"/>
     <label name="date"/>
     <field name="date"/>
     <label name="source_name"/>
