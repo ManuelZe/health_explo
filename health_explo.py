@@ -501,6 +501,8 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
             if not values.get('request'):
                 values['request'] = cls.generate_code()
 
+        print("Voici la vlist qui sera envoyée ", vlist)
+
         return super(GnuHealthPatientExpTest, cls).create(vlist)
 
     @classmethod
