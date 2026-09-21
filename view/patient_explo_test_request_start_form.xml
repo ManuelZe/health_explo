@@ -25,5 +25,5 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <label name="context"/>
     <field name="context"/>
     <newline/>
-    <field name="tests" colspan="5"/>
+    <!-- <field name="tests" colspan="5"/> -->
 </form>
