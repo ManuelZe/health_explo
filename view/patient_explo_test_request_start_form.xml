@@ -24,6 +24,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <field name="doctor" widget="selection"/>
     <label name="context"/>
     <field name="context"/>
-    <newline/>
-    <field name="tests" colspan="5"/>
+    <!-- <newline/>
+    <field name="tests" colspan="5"/> -->
 </form>
