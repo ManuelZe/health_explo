@@ -435,7 +435,7 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
         super(GnuHealthPatientExpTest, cls).__setup__()
         cls._order.insert(0, ('date', 'DESC'))
         cls._order.insert(1, ('request', 'DESC'))
-        cls._order.insert(2, ('name', 'ASC'))
+        cls._order.insert(2, ('test_type2', 'ASC'))
 
     @staticmethod
     def default_date():
@@ -498,9 +498,11 @@ class GnuHealthPatientExpTest(ModelSQL, ModelView):
     def create(cls, vlist):
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            values["request"] = cls.generate_code()
-            if not values.get('name'):
-                values['name'] = cls.generate_code()
+            if not values.get('request'): # Mieux vaut vérifier avant d'écraser
+                values["request"] = cls.generate_code()
+            # values["request"] = cls.generate_code()
+            # if not values.get('name'):
+            #     values['name'] = cls.generate_code()
 
         return super(GnuHealthPatientExpTest, cls).create(vlist)
 

@@ -56,7 +56,7 @@ class CreateExploTestOrder(Wizard):
                     gettext('health_explo.msg_explo_order_exists')
                     )
 
-            test_report_data['test'] = explo_test_order.name.id
+            test_report_data['test'] = explo_test_order.test_type2.id
             test_report_data['source_type'] = explo_test_order.source_type
             test_report_data['patient'] = explo_test_order.patient_id and explo_test_order.patient_id.id
             test_report_data['other_source'] = explo_test_order.other_source
@@ -65,7 +65,7 @@ class CreateExploTestOrder(Wizard):
             test_report_data['date_requested'] = explo_test_order.date
             test_report_data['request_order'] = explo_test_order.request
 
-            for critearea in explo_test_order.name.critearea:
+            for critearea in explo_test_order.test_type2.critearea:
                 test_cases.append(('create', [{
                         'name': critearea.name,
                         'code': critearea.code,
@@ -170,7 +170,7 @@ class RequestPatientExploTest(Wizard):
         for test in self.start.tests:
             explo_test = {}
             explo_test['request'] = request_number
-            explo_test['name'] = test.id
+            explo_test['test_type2'] = test.id
             explo_test['source_type'] = self.start.source_type
             explo_test['patient_id'] = self.start.patient and self.start.patient.id
             explo_test['other_source'] = self.start.other_source
